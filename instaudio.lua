@@ -51,8 +51,7 @@ wget.callbacks.get_urls = function(file, url, is_css, iri)
             local origurl = url
             local url = string.match(urla, "^([^#]+)")
             local url_ = string.gsub(url, "&amp;", "&")
-            if (downloaded[url_] ~= true and addedtolist[url_] ~= true)
-                and allowed(url_, origurl) then
+            if (downloaded[url_] ~= true and addedtolist[url_] ~= true) then
                 table.insert(urls, { url=url_ })
                 addedtolist[url_] = true
                 addedtolist[url] = true
