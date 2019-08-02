@@ -68,7 +68,7 @@ if not WGET_LUA:
 #
 # Update this each time you make a non-cosmetic change.
 # It will be added to the WARC files and reported to the tracker.
-VERSION = '20190803.01'
+VERSION = '20190803.02'
 USER_AGENT = 'ArchiveTeam'
 TRACKER_ID = 'instaudio'
 TRACKER_HOST = 'tracker.archiveteam.org'
@@ -218,7 +218,11 @@ class WgetArgs(object):
 
 project = Project(
     title='instaudio',
-    project_html=''
+    project_html='''
+        <img class="project-logo" alt="Project logo" src="https://www.archiveteam.org/images/5/51/Instaudio-icon.png" height="50px" title=""/>
+        <h2>instaud.io <span class="links"><a href="https://instaud.io/">Website</a> &middot; <a href="http://tracker.archiveteam.org/instaudio/">Leaderboard</a></span></h2>
+        <p>Archiving Instaudio.</p>
+    '''
 )
 
 pipeline = Pipeline(
