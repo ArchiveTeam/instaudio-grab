@@ -1,4 +1,4 @@
-reddit-grab
+instaudio-grab
 =============
 
 More information about the archiving project can be found on the ArchiveTeam wiki: [Instaud.io](http://archiveteam.org/index.php?title=Instaud.io)
