@@ -23,8 +23,9 @@ read_file = function(file)
 end
 
 allowed = function(url, parenturl)
-    if string.match(url, "https://instaudio.s3.amazonaws.com/")
-        or string.match(url, "https://instaud.io/_/") then
+    if string.match(url, "^https://instaudio.s3.amazonaws.com/")
+        or string.match(url, "^https://instaud.io/_/")
+        or url == "https://instaud.io/" .. item_value then
         return true
     end
     return false
@@ -67,9 +68,9 @@ wget.callbacks.get_urls = function(file, url, is_css, iri)
         local waveform_url = string.match(body, "data%-instaudio%-player%-spectrogram=\"([^\"]+)\"")
         if waveform_url then
             check(waveform_url)
-        else
-            io.stdout:write("No waveform URL found.")
-            abortgrab = true
+        --else
+        --    io.stdout:write("No waveform URL found.")
+        --    abortgrab = true
         end
         return urls
     end
